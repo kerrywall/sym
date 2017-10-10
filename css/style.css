@@ -136,16 +136,13 @@ body {
     clear: both; }
 
 body {
-  background-color: #f4eded; }
-
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto; }
+  background-color: #fff; }
 
 header {
   text-align: center; }
-  header h1 {
-    font-weight: lighter; }
+  header .logo {
+    max-width: 300px;
+    margin: 10px 0; }
 
 .row {
   clear: both; }
@@ -154,16 +151,38 @@ header {
       margin-bottom: 20px; } }
 
 .box {
-  background-color: #928e8e;
   display: inline;
   float: left;
-  width: 940px;
-  margin: 0 10px; }
+  width: 97.91667%;
+  margin: 0 1.04167%;
+  margin-bottom: 20px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative; }
+  @media only screen and (min-width: 640px) {
+    .box {
+      display: inline;
+      float: left;
+      width: 47.91667%;
+      margin: 0 1.04167%;
+      padding-bottom: 26.25%;
+      margin-bottom: 20px; } }
   @media only screen and (min-width: 768px) {
     .box {
-      width: 300px;
-      margin-right: 10px;
-      height: 200px;
+      display: inline;
+      float: left;
+      width: 31.25%;
+      margin: 0 1.04167%;
+      margin-bottom: 30px;
+      padding-bottom: 17.25%;
       transition: 0.5s all ease; }
       .box:hover {
         font-size: 20px; } }
+
+.box iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }

@@ -1,16 +1,14 @@
 body {
-	background-color: #f4eded;
+	background-color: #fff;
 }
 
-.wrapper {
-	max-width: 960px;
-	margin: 0 auto;
-}
+
 
 header {
 	text-align: center;
-	h1 {
-		font-weight: lighter;
+	.logo {
+		max-width: 300px;
+		margin: 10px 0;
 	}
 }
 
@@ -22,15 +20,32 @@ header {
 }
 
 .box {
-	background-color: #928e8e;
 	@include column(12);
+	margin-bottom: 20px;
+	height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    @include min-screen(640px) {
+    	@include column(6);
+    	padding-bottom: 26.25%;
+    	margin-bottom: 20px;
+    }
 	@include min-screen(768px) {
-		width: 300px;
-		margin-right: 10px;
-		height: 200px;
+		@include column(4);
+		margin-bottom: 30px;
+		padding-bottom: 17.25%;
 		transition: 0.5s all ease;
 		&:hover {
 			font-size: 20px;
 		}
 	}
+}
+
+.box iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
