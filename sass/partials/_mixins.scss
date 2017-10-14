@@ -3,6 +3,5 @@
 	@include min-screen(768px) {
 		position: absolute;
 		left: $width;
-		transition: left 1s ease;
 	}
 }

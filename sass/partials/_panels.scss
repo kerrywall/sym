@@ -9,17 +9,9 @@
 		padding: 3%;
 
 		// transition details for the panel opening
-		
+		transition: left 0.5s ease;
 
-		// three panels on 768+
-		// @include min-screen(768px) {
-		// 	width: 33.333%;
-		// 	float: left;
-		// 	height: 100vh;
-		// 	text-align: left;
-		// }
-
-		// three 50% width panels on 768+
+		// three overlapped 50% width panels on 768+
 		@include min-screen(768px) {
 			width: 50%;
 			float:left;
@@ -37,23 +29,29 @@
 		// individual panel styles
 		&.opera {
 			background-color: #20629c;
-			transition: left 1s ease;
+			transition: left 0.5s ease;
 			@include placement(33%);
 		}
 		&.music {
 			background-color: #104a73;
-			transition: left 1s ease;
+			transition: left 0.5s ease;
 			@include placement(-17%);
+			.overlay {
+				@include min-screen(768px) {
+					text-align: right;
+					@include push(4);
+				}
+			}
 		}
 		&.ballet {
 			background-color: #62a4c5;
-			transition: left 1s ease;
+			transition: left 0.5s ease;
 			@include placement(66%);
 		}
 
 		&.open {
 			@include placement(0);
-			transition: left 1s ease;
+			transition: left 0.5s ease;
 		}
 
 		// heading
@@ -102,6 +100,7 @@
 		.overlay {
 			@include min-screen(768px) {
 				position: absolute;
+				@include column(6);
 				bottom: 0;
 				// visibility: hidden;
 				opacity: 0;
@@ -128,7 +127,6 @@
 			float: left;
 			margin: 0;
 			padding: 3%;
-			transition: 0.5s width linear;
 		}
 	}
 
@@ -141,16 +139,19 @@
 	}
 
 	.content {
-		display: none;
 		@include min-screen(768px) {
+			visibility: hidden;
+			opacity: 0;
 			height: 100vh;
 			overflow: auto;
-			@include placement(50%);
-			transition: left 1s ease;
+			@include placement(100%);
+			transition: left 0.3s linear;
 		}
 		&.open {
-			display: block;
-
+			visibility: visible;
+			opacity: 1;
+			transition: left 0.3s linear;
+			@include placement(50%);
 		}
 	}
 }

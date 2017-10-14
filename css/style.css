@@ -194,7 +194,8 @@ body {
   position: relative;
   text-align: center;
   height: 33.333vh;
-  padding: 3%; }
+  padding: 3%;
+  transition: left 0.5s ease; }
   @media only screen and (min-width: 768px) {
     .panel-wrapper .panel {
       width: 50%;
@@ -208,35 +209,35 @@ body {
     transition: opacity 0.5s ease; }
   .panel-wrapper .panel.opera {
     background-color: #20629c;
-    transition: left 1s ease; }
+    transition: left 0.5s ease; }
     @media only screen and (min-width: 768px) {
       .panel-wrapper .panel.opera {
         position: absolute;
-        left: 33%;
-        transition: left 1s ease; } }
+        left: 33%; } }
   .panel-wrapper .panel.music {
     background-color: #104a73;
-    transition: left 1s ease; }
+    transition: left 0.5s ease; }
     @media only screen and (min-width: 768px) {
       .panel-wrapper .panel.music {
         position: absolute;
-        left: -17%;
-        transition: left 1s ease; } }
+        left: -17%; } }
+    @media only screen and (min-width: 768px) {
+      .panel-wrapper .panel.music .overlay {
+        text-align: right;
+        margin-left: 34.375%; } }
   .panel-wrapper .panel.ballet {
     background-color: #62a4c5;
-    transition: left 1s ease; }
+    transition: left 0.5s ease; }
     @media only screen and (min-width: 768px) {
       .panel-wrapper .panel.ballet {
         position: absolute;
-        left: 66%;
-        transition: left 1s ease; } }
+        left: 66%; } }
   .panel-wrapper .panel.open {
-    transition: left 1s ease; }
+    transition: left 0.5s ease; }
     @media only screen and (min-width: 768px) {
       .panel-wrapper .panel.open {
         position: absolute;
-        left: 0;
-        transition: left 1s ease; } }
+        left: 0; } }
   .panel-wrapper .panel h2 {
     color: #fff;
     text-transform: uppercase;
@@ -272,6 +273,10 @@ body {
   @media only screen and (min-width: 768px) {
     .panel-wrapper .panel .overlay {
       position: absolute;
+      display: inline;
+      float: left;
+      width: 47.91667%;
+      margin: 0 1.04167%;
       bottom: 0;
       opacity: 0;
       transition: transform 0.15s linear, opacity 0.35s linear; } }
@@ -286,25 +291,30 @@ body {
     width: 50%;
     float: left;
     margin: 0;
-    padding: 3%;
-    transition: 0.5s width linear; } }
+    padding: 3%; } }
 
 .panel-wrapper .panel.open .back {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease; }
 
-.panel-wrapper .content {
-  display: none; }
-  @media only screen and (min-width: 768px) {
-    .panel-wrapper .content {
-      height: 100vh;
-      overflow: auto;
-      transition: left 1s ease; } }
+@media only screen and (min-width: 768px) {
+  .panel-wrapper .content {
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+    overflow: auto;
+    transition: left 0.3s linear; } }
   @media only screen and (min-width: 768px) and (min-width: 768px) {
     .panel-wrapper .content {
       position: absolute;
-      left: 50%;
-      transition: left 1s ease; } }
-  .panel-wrapper .content.open {
-    display: block; }
+      left: 100%; } }
+
+.panel-wrapper .content.open {
+  visibility: visible;
+  opacity: 1;
+  transition: left 0.3s linear; }
+  @media only screen and (min-width: 768px) {
+    .panel-wrapper .content.open {
+      position: absolute;
+      left: 50%; } }

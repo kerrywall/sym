@@ -13,7 +13,7 @@ $(document).ready(function() {
 			$('.panel.ballet').hide();
 			$('.panel.music').hide();
 		} else {
-			$('.panel').show();
+			$('.panel').fadeIn('slow');
 		}
 
 	});
