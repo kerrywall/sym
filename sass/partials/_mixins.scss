@@ -1,0 +1,7 @@
+// panel placement mixin
+@mixin placement($width) {
+	@include min-screen(768px) {
+		position: absolute;
+		left: $width;
+	}
+}
