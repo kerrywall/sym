@@ -1,19 +1,29 @@
 .panel-wrapper {
+	// intial panel dipslay (closed)
 	.panel {
 		//full-width on mobile
 		width: 100%;
-		padding: 3%;
 		position: relative;
 		text-align: center;
 		height: 33.333vh;
+		padding: 3%;
+
+		// transition details for the panel opening
+		// transition: 0.5s width linear;
 
 		// three panels on 768+
 		@include min-screen(768px) {
 			width: 33.333%;
 			float: left;
 			height: 100vh;
-			padding: 3%;
 			text-align: left;
+		}
+
+		.back {
+			visibility: hidden;
+			opacity: 0;
+			color: #fff;
+			transition: opacity 0.5s ease;
 		}
 
 		// individual panel styles
@@ -89,6 +99,41 @@
 					opacity: 1;
 				}
 			}
+		}
+	}
+
+	// open panels
+	.panel.open, .content.open {
+		@include min-screen(768px) {
+			width: 50%;
+			float: left;
+			margin: 0;
+			padding: 3%;
+			// transition: 0.5s width linear;
+		}
+	}
+
+	.panel.open {
+		.back {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity 0.5s ease;
+		}
+		@include min-screen(768px) {
+			.overlay {
+				width: 90%;
+			}
+		}
+	}
+
+	.content {
+		display: none;
+		@include min-screen(768px) {
+			height: 100vh;
+			overflow: auto;
+		}
+		&.open {
+			display: block;
 		}
 	}
 }

@@ -180,10 +180,7 @@ body {
       width: 31.25%;
       margin: 0 1.04167%;
       margin-bottom: 30px;
-      padding-bottom: 17.25%;
-      transition: 0.5s all ease; }
-      .grid-wrapper .box:hover {
-        font-size: 20px; } }
+      padding-bottom: 17.25%; } }
 
 .grid-wrapper .box iframe {
   height: 100%;
@@ -194,17 +191,21 @@ body {
 
 .panel-wrapper .panel {
   width: 100%;
-  padding: 3%;
   position: relative;
   text-align: center;
-  height: 33.333vh; }
+  height: 33.333vh;
+  padding: 3%; }
   @media only screen and (min-width: 768px) {
     .panel-wrapper .panel {
       width: 33.333%;
       float: left;
       height: 100vh;
-      padding: 3%;
       text-align: left; } }
+  .panel-wrapper .panel .back {
+    visibility: hidden;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.5s ease; }
   .panel-wrapper .panel.opera {
     background-color: #20629c; }
   .panel-wrapper .panel.music {
@@ -254,3 +255,28 @@ body {
       transform: translateY(-20%);
       visibility: visible;
       opacity: 1; } }
+
+@media only screen and (min-width: 768px) {
+  .panel-wrapper .panel.open, .panel-wrapper .content.open {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 3%; } }
+
+.panel-wrapper .panel.open .back {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease; }
+
+@media only screen and (min-width: 768px) {
+  .panel-wrapper .panel.open .overlay {
+    width: 90%; } }
+
+.panel-wrapper .content {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .panel-wrapper .content {
+      height: 100vh;
+      overflow: auto; } }
+  .panel-wrapper .content.open {
+    display: block; }

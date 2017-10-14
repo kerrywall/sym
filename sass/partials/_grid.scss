@@ -34,10 +34,6 @@ body {
 			@include column(4);
 			margin-bottom: 30px;
 			padding-bottom: 17.25%;
-			transition: 0.5s all ease;
-			&:hover {
-				font-size: 20px;
-			}
 		}
 	}
 
