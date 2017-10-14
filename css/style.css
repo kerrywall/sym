@@ -194,10 +194,11 @@ body {
   position: relative;
   text-align: center;
   height: 33.333vh;
-  padding: 3%; }
+  padding: 3%;
+  transition: 0.5s width linear; }
   @media only screen and (min-width: 768px) {
     .panel-wrapper .panel {
-      width: 33.333%;
+      width: 50%;
       float: left;
       height: 100vh;
       text-align: left; } }
@@ -208,10 +209,26 @@ body {
     transition: opacity 0.5s ease; }
   .panel-wrapper .panel.opera {
     background-color: #20629c; }
+    @media only screen and (min-width: 768px) {
+      .panel-wrapper .panel.opera {
+        position: absolute;
+        left: 33%; } }
   .panel-wrapper .panel.music {
     background-color: #104a73; }
+    @media only screen and (min-width: 768px) {
+      .panel-wrapper .panel.music {
+        position: absolute;
+        left: -17%; } }
   .panel-wrapper .panel.ballet {
     background-color: #62a4c5; }
+    @media only screen and (min-width: 768px) {
+      .panel-wrapper .panel.ballet {
+        position: absolute;
+        left: 66%; } }
+  @media only screen and (min-width: 768px) {
+    .panel-wrapper .panel.open {
+      position: absolute;
+      left: 0; } }
   .panel-wrapper .panel h2 {
     color: #fff;
     text-transform: uppercase;
@@ -261,16 +278,13 @@ body {
     width: 50%;
     float: left;
     margin: 0;
-    padding: 3%; } }
+    padding: 3%;
+    transition: 0.5s width linear; } }
 
 .panel-wrapper .panel.open .back {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease; }
-
-@media only screen and (min-width: 768px) {
-  .panel-wrapper .panel.open .overlay {
-    width: 90%; } }
 
 .panel-wrapper .content {
   display: none; }
@@ -280,3 +294,7 @@ body {
       overflow: auto; } }
   .panel-wrapper .content.open {
     display: block; }
+    @media only screen and (min-width: 768px) {
+      .panel-wrapper .content.open {
+        position: absolute;
+        left: 50%; } }
