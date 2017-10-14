@@ -9,7 +9,7 @@
 		padding: 3%;
 
 		// transition details for the panel opening
-		transition: 0.5s width linear;
+		
 
 		// three panels on 768+
 		// @include min-screen(768px) {
@@ -37,19 +37,23 @@
 		// individual panel styles
 		&.opera {
 			background-color: #20629c;
+			transition: left 1s ease;
 			@include placement(33%);
 		}
 		&.music {
 			background-color: #104a73;
+			transition: left 1s ease;
 			@include placement(-17%);
 		}
 		&.ballet {
 			background-color: #62a4c5;
+			transition: left 1s ease;
 			@include placement(66%);
 		}
 
 		&.open {
 			@include placement(0);
+			transition: left 1s ease;
 		}
 
 		// heading
@@ -141,10 +145,12 @@
 		@include min-screen(768px) {
 			height: 100vh;
 			overflow: auto;
+			@include placement(50%);
+			transition: left 1s ease;
 		}
 		&.open {
 			display: block;
-			@include placement(50%);
+
 		}
 	}
 }
