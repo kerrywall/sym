@@ -4,14 +4,14 @@ $(document).ready(function() {
 		$(z.currentTarget.nextElementSibling).toggleClass('open');
 		
 		if ($('.panel.music').hasClass('open')) {
-			$('.panel.ballet').hide();
-			$('.panel.opera').hide();
+			$('.panel.ballet').fadeOut('fast');
+			$('.panel.opera').fadeOut('fast');
 		} else if ($('.panel.ballet').hasClass('open')) {
-			$('.panel.music').hide();
-			$('.panel.opera').hide();
+			$('.panel.music').fadeOut('fast');
+			$('.panel.opera').fadeOut('fast');
 		} else if ($('.panel.opera').hasClass('open')) {
-			$('.panel.ballet').hide();
-			$('.panel.music').hide();
+			$('.panel.ballet').fadeOut('fast');
+			$('.panel.music').fadeOut('fast');
 		} else {
 			$('.panel').fadeIn('slow');
 		}

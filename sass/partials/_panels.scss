@@ -1,3 +1,7 @@
+body {
+	overflow-x: hidden;
+}
+
 .panel-wrapper {
 	// intial panel dipslay (closed)
 	.panel {
@@ -9,7 +13,7 @@
 		padding: 3%;
 
 		// transition details for the panel opening
-		transition: left 0.5s ease;
+		transition: left 1s ease;
 
 		// three overlapped 50% width panels on 768+
 		@include min-screen(768px) {
@@ -28,14 +32,20 @@
 
 		// individual panel styles
 		&.opera {
-			background-color: #20629c;
+			background-image: url(../img/Opera_LG.jpg);
+			background-size: cover;
+			background-position: center center;
 			transition: left 0.5s ease;
 			@include placement(33%);
+
 		}
 		&.music {
 			background-color: #104a73;
 			transition: left 0.5s ease;
 			@include placement(-17%);
+			background-image: url(../img/Music_LG.png);
+			background-size: cover;
+			background-position: center center;
 			.overlay {
 				@include min-screen(768px) {
 					text-align: right;
@@ -44,6 +54,9 @@
 			}
 		}
 		&.ballet {
+			background-image: url(../img/Ballet_LG.jpg);
+			background-size: cover;
+			background-position: center center;
 			background-color: #62a4c5;
 			transition: left 0.5s ease;
 			@include placement(66%);
@@ -62,6 +75,7 @@
 			font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
 			letter-spacing: -2px;
 			font-size: 60px;
+			text-shadow: 3px 3px 0 #111;
 			@include min-screen(768px) {
 				font-size: 84px;
 			}
@@ -70,6 +84,7 @@
 		// styles for the surtitle
 		p:first-child {
 			margin-bottom: 5px;
+			text-shadow: 1px 1px 0 #111;
 		}
 		.surtitle {
 			text-transform: uppercase;
@@ -85,11 +100,12 @@
 		// descriptive text
 		.description {
 			font-family: Domine, serif;
-			color: #e6e6e6;
+			color: #fff;
 			font-size: 24px;
 			line-height: 36px;
 			font-weight: 300;
 			margin: 0;
+			text-shadow: 2px 2px 1px #111;
 			display: none;
 			@include min-screen(768px) {
 				display: block;
@@ -122,35 +138,57 @@
 
 	// open panels
 	.panel.open, .content.open {
+		padding: 3%;
 		@include min-screen(768px) {
 			width: 50%;
 			float: left;
 			margin: 0;
-			padding: 3%;
 		}
 	}
 
 	.panel.open {
 		.back {
-			opacity: 1;
-			visibility: visible;
-			transition: opacity 0.5s ease;
+			@include min-screen(768px) {
+				opacity: 1;
+				visibility: visible;
+				transition: opacity 0.5s ease;
+			}
 		}
 	}
 
 	.content {
+		display: none;
 		@include min-screen(768px) {
+			height: 100vh;
 			visibility: hidden;
 			opacity: 0;
-			height: 100vh;
 			overflow: auto;
-			@include placement(100%);
-			transition: left 0.3s linear;
+			z-index: -1;
+			position: relative;
+		}
+		.link {
+			@include min-screen(768px) {
+				position: absolute;
+				bottom: 0;
+			}
+		}
+		&.music {
+			@include placement(-17%);
+			transition: left 0.25s linear;
+		}
+		&.opera {
+			@include placement(33%);
+			transition: left 0.25s linear;
+		}
+		&.ballet {
+			@include placement(67%);
+			transition: left 0.25s linear;
 		}
 		&.open {
 			visibility: visible;
 			opacity: 1;
-			transition: left 0.3s linear;
+			display: block;
+			transition: left 0.25s linear;
 			@include placement(50%);
 		}
 	}

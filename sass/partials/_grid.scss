@@ -21,27 +21,21 @@ body {
 	.box {
 		@include column(12);
 		margin-bottom: 20px;
-		height: 0;
-	    overflow: hidden;
-	    padding-bottom: 56.25%;
 	    position: relative;
 	    @include min-screen(640px) {
 	    	@include column(6);
-	    	padding-bottom: 26.25%;
 	    	margin-bottom: 20px;
 	    }
 		@include min-screen(768px) {
 			@include column(4);
 			margin-bottom: 30px;
-			padding-bottom: 17.25%;
+		}
+		transition: all .25s ease;
+		&:hover {
+			transform: scale(1.025);
 		}
 	}
-
-	.box iframe {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
+	.box img {
 		width: 100%;
 	}
 }
