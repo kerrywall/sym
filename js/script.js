@@ -16,5 +16,10 @@ $(document).ready(function() {
 			$('.panel').fadeIn('slow');
 		}
 
+		if ($('.panel').hasClass('open')) {
+			$('.panel-logo').fadeOut();
+		} else {
+			$('.panel-logo').fadeIn();
+		}
 	});
 });

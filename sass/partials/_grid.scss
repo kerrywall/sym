@@ -3,11 +3,22 @@ body {
 }
 
 .grid-wrapper {
+	max-width: 1280px;
+	margin: 0 auto;
 	header {
 		text-align: center;
 		.logo {
 			max-width: 300px;
-			margin: 10px 0;
+			margin: 50px 0;
+		}
+	}
+
+	.sorter {
+		text-align: center;
+		@include column(12);
+		margin-bottom: 20px;
+		img {
+			max-width: 100%;
 		}
 	}
 
@@ -27,7 +38,7 @@ body {
 	    	margin-bottom: 20px;
 	    }
 		@include min-screen(768px) {
-			@include column(4);
+			@include column(3);
 			margin-bottom: 30px;
 		}
 		transition: all .25s ease;

@@ -2,6 +2,20 @@ body {
 	overflow-x: hidden;
 }
 
+//logo 
+.panel-logo {
+	position: absolute;
+	margin: 0 auto;
+	top: 50px;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+	img {
+		max-width: 300px;
+	}
+
+}
+
 .panel-wrapper {
 	// intial panel dipslay (closed)
 	.panel {
@@ -170,6 +184,14 @@ body {
 			@include min-screen(768px) {
 				position: absolute;
 				bottom: 0;
+				text-transform: uppercase;
+				margin: 0;
+				font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
+				letter-spacing: -2px;
+				font-size: 84px;
+			}
+			a {
+				color: #000;
 			}
 		}
 		&.music {
